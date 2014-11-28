@@ -1,0 +1,65 @@
+Plan de la présentation:
+
+L'état de la supervision OpenStack
+        - La supervision ne ne fait pas partie du coeur d'OpenStack
+        - Ceilometer récolte uniquement de l'information d'utilisation à fin de facturation
+
+Qu'est-ce qui manque?
+        - Information sur l'état des services/aplications qui roulent sur le nuage
+        - De l'information détaillée provenant des machines virtuelles
+        - Notifications à l'utilisateur lorsque les ressources ont besoin d'attention.
+
+Solution
+        - Monitoring as a Service
+
+
+Présentation:
+ 
+
+
+Idées:
+
+Presentation du Monitoring:
+	What is monitoring?
+		* Performs checks
+		* Applies Rules
+		* Alerts Users
+		* Stores historical metrics
+
+"Problems hide in the metrics you don't think to expose"
+
+
+Présentations Ceilometer
+Informations disponibles dans ceilometer:
+	* Memory usage
+	* CPU utilization
+	* Disk usage
+	* Network traffic
+
+Initial objective: " deliver a unique point of contact for billing systems to aquire all meters they need to establish customer billing, across all current and future OpenStack core components."
+
+L'objectif initial de Ceilometer à été d'être l'unique point de contact pour les systèmes de facturation et d'acquérir tout les mesures que ceux ci ont besoin pour effectuer la facturation à travers l'ensemble des composants OpenStack.
+
+
+New objective for Grizzly: "The project aims to become the infrastructure to collect measurements within OpenStack so that no two agents would need to be written to collect the same data. Its primary targets are monitoring and metering, but the framework should be easily expandable to collect for other needs. To that effect, Ceilometer should be able to share collected data with a variety of consumers."
+
+Depuis Grizzly, l'objectif de Ceilometer a changé. Il est maintenant de devenir l'infrastructure pour la collecte de mesures dans OpenStack afin d'éviter que deux agents soient développés pour acquérir les mêmes données. Le but principal de ceilometer est le le monitoring et le metering. Ceilometer doit être capable de partager les données récoltées à une variété de consommateurs.
+
+
+Présentation Rackspace Cloud Monitoring
+"Checking to see if a service is up or down"
+
+"Monitor all standard ports like HTTP, HTTPS, FTP, SMTP, POP3, SSH, telnet, and DNS. Perform banner checks for MS SQL, MySQL, and PostgreSQL"
+
+Présentation Amazon Cloud Watch
+"Amazon CloudWatch fournit une surveillance pour les ressources du cloud AWS et les applications sur les clients exécutent sur AWS"
+
+"Soumettez des Mesures personnalisées générées par vos propres applications (ou par les ressources AWS non mentionnées ci-dessus) et faites les surveiller par Amazon CloudWatch. Vous pouvez soumettre ces mesures à Amazon CloudWatch via une seule demande API Put."
+
+
+Brainstorm:
+Plugins nagios
+Availability
+Application-specific monitoring
+Integration with Horizon, graphs
+

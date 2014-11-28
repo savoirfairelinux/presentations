@@ -1,0 +1,47 @@
+.. revealjs:: Périmetre
+
+    Quoi : Tout ce qui peut avoir un cable réseau (voir mieux dans certains cas)
+
+    Comment : 
+
+    * Ordonnancement continue des vérifications
+    * Exécution active ou passive des vérifications
+    * Levée d'alertes au besoin
+
+
+    Vérification actives : 
+
+    * La sonde s'exécute sur le serveur de supervision et retourne le résultat directement 
+    * La sonde s'exécute sur un serveur tiers (le plus souvent l'hote) et la communication avec le serveur de supervision est faite par un autre processus, un agent (Modele client - serveur : NRPE) 
+
+
+    Vérification passives :
+
+    * Les données - récoltées ou non par une sonde - sont envoyées au serveur de supervision sans fréquence connu par ce dernier. Les données sont parfois formattée différement selon le protocol utilisé.
+
+
+.. raw:: html
+
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+

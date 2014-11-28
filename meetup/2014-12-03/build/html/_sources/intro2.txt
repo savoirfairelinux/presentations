@@ -1,0 +1,7 @@
+Définitions des concepts et recherche d'un format
+
+.. raw:: html
+
+    <br/>
+
+* https://blueprints.launchpad.net/ceilometer/+spec/monitoring-as-a-service
