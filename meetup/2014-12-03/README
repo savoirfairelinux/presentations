@@ -1,8 +1,0 @@
-To build the presentation
-1. virtualenv env
-2. pip install -r requirements.freeze
-3. make html
-
-The presentation is hosted the following URLs:
-French: https://savoirfairelinux.github.io/MONaaS-presentation/
-English: https://savoirfairelinux.github.io/MONaaS-presentation/en

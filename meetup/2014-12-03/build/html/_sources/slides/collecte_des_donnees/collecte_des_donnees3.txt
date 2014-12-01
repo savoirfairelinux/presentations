@@ -1,4 +1,0 @@
-* Matériel
-* Système
-* Application
-* Service
