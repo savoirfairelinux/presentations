@@ -4,6 +4,6 @@
     .. raw:: html
 
         <ul>
-        <li class="fragment">Pésentation de Kaji</li>
+        <li class="fragment">Présentation de Kaji</li>
         <li class="fragment">Exemple de supervision : site web par scénario</li>
         </ul>

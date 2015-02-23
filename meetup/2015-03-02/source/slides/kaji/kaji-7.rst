@@ -1,4 +1,4 @@
-* Le nom de ce gateau (le vrai) est un Saint-Honoré, sa structure rapelle le coté modulaire de Kaji
+* Le nom de ce gateau (le vrai) est Saint-Honoré, sa structure rappelle le coté modulaire de Kaji
 
 * Il existe plusieurs type de Saint Honoré, comme il existe plusieurs applications pour Kaji
 

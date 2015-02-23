@@ -1,4 +1,4 @@
-Second meetup : Présensation du projet Kaji et exemple metiers
+Second meetup : Présensation du projet Kaji et exemple métier
 
 .. raw:: html
 
