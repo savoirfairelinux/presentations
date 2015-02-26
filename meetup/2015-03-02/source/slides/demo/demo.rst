@@ -8,9 +8,14 @@
       .. include:: slides/demo/demo-1.rst
 
 
-.. revealjs:: Other
+.. revealjs:: Avantages
 
       .. include:: slides/demo/demo-2.rst
+
+
+.. revealjs:: Inconvénients
+
+      .. include:: slides/demo/demo-3.rst
 
 
 

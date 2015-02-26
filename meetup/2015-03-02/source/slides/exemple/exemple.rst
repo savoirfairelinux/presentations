@@ -1,15 +1,6 @@
-.. revealjs:: Qu'est ce qu'on peut collecter?
+.. revealjs:: Et si on supervisait des sites webs?
 
-      .. include:: slides/collecte_des_donnees/collecte_des_donnees1.rst
-
-.. revealjs:: Qu'est qu'on collecte habituellement?
-
-      .. include:: slides/collecte_des_donnees/collecte_des_donnees2.rst
-
-
-.. revealjs:: Quelles sont les catégories?
-
-      .. include:: slides/collecte_des_donnees/collecte_des_donnees3.rst
+      .. include:: slides/exemple/exemple-1.rst
 
 
 

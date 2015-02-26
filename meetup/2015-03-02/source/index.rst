@@ -21,7 +21,7 @@
     .. include:: slides/demo/demo.rst
 
 
-.. revealjs:: Have a break...
+.. revealjs:: C'est l'heure de la pause!
 
     .. include:: slides/pause.rst
 
@@ -34,4 +34,9 @@
 .. revealjs:: Merci
 
     .. include:: slides/end.rst
+
+
+.. revealjs:: Sources
+
+    .. include:: slides/sources.rst
 

@@ -1,5 +1,5 @@
-* Les base de données timeseries sont la chose la plus douce (sucrée) pour la supervision. Influx agit comme la vanille
+* Architecture plus complexe dans Shinken
 
-* Répond au besoin d'un modèle de donnée pour la supervision
+* L'authentification Apache est limitée (changement de mot de passe)
 
-* La vanille a besoin de lait et de sucre  : ajoutons mod-influxdb pour Shinken et Rekishi pour Adagios dans le mélange !
+* Ne resout pas le problème de différents type d'utilisateurs
