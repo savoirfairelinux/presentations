@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://shop.lego.com/" />
+<title>lego</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">lego</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>/fr-CA/</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//a[contains(text(),'Du Nouveau')]</td>
+	<td>Du Nouveau</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//a[contains(text(),'Thèmes')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[@id='Star Wars™']/label</td>
+	<td>Star Wars™ (118)</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=a.test-AE0F776D-FD75-4DB9-9DAD-AD4852EC41F3 &gt; img.main-image.test-theme-image</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=longDescription</td>
+	<td>Recréez les aventures de Star Wars™ avec des figurines d'action et des jouets inspirés des films classiques et récents. Que vous soyez fan de Luke Skywalker™, Yoda™ ou même Darth Vader™, nos jouets Star Wars vous permettent de concevoir le combat ultime. Magasinez notre grande variété de figurines, de modèles et d'accessoires Star Wars pour revivre les moments passionnants de cette galaxie lointaine.</td>
+</tr>
+<tr>
+	<td>selectWindow</td>
+	<td>null</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>xpath=(//a[contains(text(),'4')])[4]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=img[alt=&quot;Red Five X-wing Starfighter™&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=li.item.test-item &gt; em</td>
+	<td>10240</td>
+</tr>
+</tbody></table>
+</body>
+</html>

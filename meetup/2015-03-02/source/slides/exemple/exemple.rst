@@ -20,6 +20,14 @@
 
     .. include:: slides/exemple/exemple-5.rst
 
-.. revealjs:: Autres possibilités
+.. revealjs:: Démonstration
+
+
+.. revealjs:: Lancer le plugin
 
     .. include:: slides/exemple/exemple-6.rst
+
+
+.. revealjs:: Autres possibilités
+
+    .. include:: slides/exemple/exemple-7.rst
