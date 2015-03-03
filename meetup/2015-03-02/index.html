@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+
+
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Montreal Monitoring</title>
+
+    
+
+    
+<link rel="stylesheet" href="_static/css/reveal.min.css">
+<link rel="stylesheet" href="_static/css/theme/default.css" id="theme">
+<link rel="stylesheet" href="_static/lib/css/zenburn.css">
+<link rel="stylesheet" href="_static/revealjs.css" type="text/css" />
+
+    <!-- If the query includes 'print-pdf', use the PDF print sheet -->
+    <script>
+      document.write('<link rel="stylesheet" href="_static/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf.css" type="text/css"' : 'paper.css" type="text/css" media="print"' )  );
+    </script>
+
+    <!--[if lt IE 9]>
+    <script src="_static/lib/js/html5shiv.js"></script>
+    <![endif]-->
+
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        
+  <section>
+<h2>Montreal Monitoring</h2>
+<p class="first">Second meetup : Présensation du projet Kaji et exemple métier</p>
+<br/>
+<br/><p>Sébastien Coavoux</p>
+<small>
+<a class="reference external" href="mailto:sebastien&#46;coavoux&#37;&#52;&#48;savoirfairelinux&#46;com">sebastien<span>&#46;</span>coavoux<span>&#64;</span>savoirfairelinux<span>&#46;</span>com</a></small>
+<br/>
+<br/><small class="last">
+<div class="first last"><a href="javascript:printIt()">version PDF </a>
+<script>
+        function printIt(printThis) {
+        url = location.protocol + "//" + location.hostname + location.pathname + "?print-pdf"
+        child = window.open(url);  //Open the child in a tiny window.
+        window.focus();  //Hide the child as soon as it is opened.
+        child.print();  //Print the child.
+        //child.close();  //Immediately close the child.
+        }
+</script></div></small>
+</section>
+<section>
+<h2>Programme de ce soir</h2>
+<div class="fragment first last"><ul>
+<li class="fragment">Présentation de Kaji</li>
+<li class="fragment">Exemple de supervision : site web par scénario</li>
+</ul></div></section>
+<section>
+<section class="first">
+<h2>Kaji : Comment cuisiner un gâteau open-source</h2>
+<a class="first last reference internal image-reference" href="_images/saint-honore1.jpg"><img alt="_images/saint-honore1.jpg" src="_images/saint-honore1.jpg" style="width: 300px; height: 300px;" /></a>
+</section>
+<section>
+<h2>Ingrédient de base : Shinken</h2>
+<ul class="first">
+<li><dl class="first docutils">
+<dt>Framework de supervision :</dt>
+<dd><ul class="first last simple">
+<li>Il agit comme la pâte du gâteau</li>
+<li>Il est très flexible, les modules permettent d&#8217;exporter / importer des données n&#8217;importe où</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<ul class="last simple">
+<li>Repond au besoin d&#8217;un noyau &#8220;brut&#8221; de supervision avec de grandes capabilités</li>
+</ul>
+</section>
+<section>
+<h2>Pâte à choux : Adagios</h2>
+<ul class="first last simple">
+<li>Interface utilisateur pour le web : c&#8217;est la partie principale du gâteau</li>
+<li>Répond au besoin d&#8217;une interface pour afficher et configurer la supervision</li>
+</ul>
+</section>
+<section>
+<h2>Crême patissière : InfluxDB</h2>
+<ul class="first last simple">
+<li>Les bases de données timeseries sont la chose la plus douce (sucrée) pour la supervision. Influx agit comme la vanille</li>
+<li>Répond au besoin d&#8217;un modèle de données particulier à la supervision</li>
+<li>La vanille a besoin de lait et de sucre : ajoutons mod-influxdb pour Shinken et aussi Rekishi pour Adagios dans le mélange !</li>
+</ul>
+</section>
+<section>
+<h2>Crême fouettée : Grafana</h2>
+<ul class="first last simple">
+<li>Grafana enjolive le gateau avec des graphs</li>
+<li>Il répond au besoin d&#8217;outil de dashboard possédant une intégration native avec InfluxDB</li>
+</ul>
+</section>
+<section>
+<h2>Caramel : Nagvis</h2>
+<ul class="first last simple">
+<li>Ajoute une autre touche sucrée à la recette, l&#8217;intégration à Adagios est transparente</li>
+<li>Répond au besoin d&#8217;avoir une vue carthographique, il permet de créer des cartes à l&#8217;aide de fonds personnalisés.</li>
+</ul>
+</section>
+<section>
+<h2>Packaging : packaging</h2>
+<ul class="first last simple">
+<li>Maintenant que notre gâteau est prêt, il ne reste plus qu&#8217;à lui trouver une boîte pour l&#8217;emballer</li>
+<li>Kaji est déja packagé pour de nombreuses distribution linux (rpm / deb), un dépot est disponible pour une maintenance facile.</li>
+</ul>
+</section>
+<section>
+<h2>Un nom pour ce gâteau : Kaji</h2>
+<ul class="first simple">
+<li>Le nom de ce gateau (le vrai) est Saint-Honoré, sa structure rappelle le coté modulaire de Kaji</li>
+<li>Il existe plusieurs type de Saint Honoré, comme il existe plusieurs applications pour Kaji</li>
+</ul>
+<a class="reference internal image-reference" href="_images/saint-honore2.jpg"><img alt="_images/saint-honore2.jpg" src="_images/saint-honore2.jpg" style="width: 300px; height: 300px;" /></a>
+<a class="reference internal image-reference" href="_images/saint-honore3.jpg"><img alt="_images/saint-honore3.jpg" src="_images/saint-honore3.jpg" style="width: 300px; height: 300px;" /></a>
+<a class="last reference internal image-reference" href="_images/saint-honore4.jpg"><img alt="_images/saint-honore4.jpg" src="_images/saint-honore4.jpg" style="width: 300px; height: 300px;" /></a>
+</section>
+<section class="last">
+<h2>Questions ?</h2>
+<div class="first last"></br>
+<h6>"Je ne peux rien pour qui ne se pose pas de questions." - Confucius</h6></div></section>
+</section>
+<section>
+<section class="first">
+<h2>Demo</h2>
+<p class="first">Il est maintenant temps de montrer Kaji en action!</p>
+<p class="last"><a class="reference external" href="http://demo.kaji-project.org">Demo</a></p>
+</section>
+<section>
+<h2>Exemple d'architecture modulaire</h2>
+<a class="first last reference internal image-reference" href="_images/PocSAAS.png"><img alt="_images/PocSAAS.png" src="_images/PocSAAS.png" style="width: 600px; height: 600px;" /></a>
+</section>
+<section>
+<h2>Avantages</h2>
+<ul class="first last simple">
+<li>Chaque client est isolé, cela permet de contourner les limitation actuelles d&#8217;adagios en matière de gestion des droits des utilisateurs.</li>
+<li>Le confinement est plus grand que s&#8217;il y avait une seul interface : les données lives sont dans la VM pour le client (influxdb)</li>
+<li>Tout est dans une seule VM, l&#8217;architecture est donc &#8220;jetable&#8221;. Si le client part, il faut supprimer la VM.</li>
+</ul>
+</section>
+<section class="last">
+<h2>Inconvénients</h2>
+<ul class="first last simple">
+<li>Architecture plus complexe dans Shinken</li>
+<li>L&#8217;authentification Apache est limitée (changement de mot de passe)</li>
+<li>Ne resout pas le problème de différents type d&#8217;utilisateurs</li>
+</ul>
+</section>
+</section>
+<section>
+<h2>C'est l'heure de la pause!</h2>
+On se revoit dans 5-10 minutes? :)</section>
+<section>
+<section class="first">
+<h2>Et si on supervisait des sites webs?</h2>
+</section>
+<section>
+<h2>Supervision web</h2>
+<ul class="first last">
+<li><dl class="first docutils">
+<dt>Standard</dt>
+<dd><ul class="first last simple">
+<li>check_http</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Historique</dt>
+<dd><ul class="first last simple">
+<li>WebInject</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Nouveautés</dt>
+<dd><ul class="first last simple">
+<li>Selenium</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Autres possibilités</dt>
+<dd><ul class="first last simple">
+<li>PhantomJS, CasperJS</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</section>
+<section>
+<h2>Supervision basique</h2>
+<p class="first">Plugin Nagios standard <strong>check_http</strong></p>
+<p>Basique</p>
+<div class="highlight-python"><div class="highlight"><pre>./check_http -H shop.lego.com
+</pre></div>
+</div>
+<p>En spécfiant une IP</p>
+<div class="highlight-python"><div class="highlight"><pre>./check_http -H shop.lego.com -I 171.20.70.113
+</pre></div>
+</div>
+<p>En suivant la redirection web</p>
+<div class="last highlight-python"><div class="highlight"><pre>./check_http -H shop.lego.com -I 171.20.70.113 -f follow
+</pre></div>
+</div>
+</section>
+<section>
+<h2>Scénario Web</h2>
+<p class="first"><strong>WEBINJECT</strong></p>
+<ul class="last">
+<li><p class="first">Permet de créer des scénarios Web</p>
+</li>
+<li><dl class="first docutils">
+<dt>Pour créer un scénario, il faut soit :</dt>
+<dd><ul class="first last simple">
+<li>Connaître le fonctionnement du site</li>
+<li>Faire rétroingénierie du site</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Liens</dt>
+<dd><ul class="first last simple">
+<li><cite>http://www.webinject.org</cite></li>
+<li><cite>https://github.com/sni/Webinject</cite></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</section>
+<section>
+<h2>WebInject</h2>
+<p class="first">config.xml</p>
+<div class="highlight-python"><div class="highlight"><pre>&lt;globalhttplog&gt;onfail&lt;/globalhttplog&gt;
+</pre></div>
+</div>
+<p>lego.xml</p>
+<div class="highlight-python"><div class="highlight"><pre>&lt;testcases repeat=&quot;1&quot;&gt;
+    &lt;case
+        id             = &quot;1&quot;
+        description1   = &quot;Lego store home page&quot;
+        method         = &quot;get&quot;
+        url            = &quot;http://shop.lego.com/fr-CA/&quot;
+        verifypositive = &quot;Du Nouveau&quot;
+        label          = &quot;homepage&quot;
+    /&gt;
+&lt;/testcases&gt;
+</pre></div>
+</div>
+<p>Lancement du test</p>
+<div class="last highlight-python"><div class="highlight"><pre>perl bin/webinject.pl -c config.xml lego.xml -r nagios
+</pre></div>
+</div>
+</section>
+<section>
+<h2>Supervision avec Selenium</h2>
+<ul class="first last">
+<li><p class="first">Outil d&#8217;intégration continue pour le développement web</p>
+</li>
+<li><dl class="first docutils">
+<dt>Permet de créer des scénarios Web</dt>
+<dd><ul class="first last simple">
+<li>À l&#8217;aide d&#8217;une interface graphique</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Pour créer un scénario, il faut :</dt>
+<dd><ul class="first last simple">
+<li>Savoir utiliser Selenium IDE</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Liens</dt>
+<dd><ul class="first last simple">
+<li><cite>http://sfl-monitoring-tools.readthedocs.org/en/latest/plugins/check-selenium/plugin-check_selenium.html</cite></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</section>
+<section>
+<h2>Démonstration</h2>
+</section>
+<section>
+<h2>Lancer le plugin</h2>
+<p class="first">Debug</p>
+<div class="highlight-python"><div class="highlight"><pre>python check_selenium -S scenarios/ -s lego -d
+OK: Scenario execution time: 16.03 seconds|time=16.03s;;;0.0;
+</pre></div>
+</div>
+<p>Pour Nagios/Shinken</p>
+<div class="last highlight-python"><div class="highlight"><pre>python check_selenium -S scenarios/ -s lego -f
+OK: Scenario execution time: 16.03 seconds|time=16.03s;;;0.0;
+</pre></div>
+</div>
+</section>
+<section class="last">
+<h2>Autres possibilités</h2>
+<ul class="first last">
+<li><dl class="first docutils">
+<dt>PhantomJS</dt>
+<dd><ul class="first last">
+<li><dl class="first docutils">
+<dt>CheckmyWS</dt>
+<dd><ul class="first last simple">
+<li><cite>https://checkmy.ws</cite></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>PhantomJS-nagios</dt>
+<dd><ul class="first last simple">
+<li><cite>https://github.com/hggh/phantomjs-nagios</cite></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</section>
+</section>
+<section>
+<h2>Merci</h2>
+<p class="first">Au plaisir de vous revoir au prochain meetup!</p>
+<blockquote class="last">
+<div><a class="reference internal image-reference" href="_images/qrcode_presentation.svg"><img height="510" src="_images/qrcode_presentation.svg" width="510" /></a>
+<p>⇑⇑ savoirfairelinux.github.io/presentations/meetup/2015-03-02 ⇑⇑</p>
+</div></blockquote>
+</section>
+<section>
+<h2>Sources</h2>
+<p class="first">Images :</p>
+<ul class="last simple">
+<li><a class="reference external" href="http://recipes.wikia.com/wiki/G%C3%A2teau_Saint-Honor%C3%A9">http://recipes.wikia.com/wiki/G%C3%A2teau_Saint-Honor%C3%A9</a></li>
+<li><a class="reference external" href="http://cityofannie.com/?p=111">http://cityofannie.com/?p=111</a></li>
+<li><a class="reference external" href="http://www.fullmetalfabulous.com/2012/06/saint-honore-cake.html">http://www.fullmetalfabulous.com/2012/06/saint-honore-cake.html</a></li>
+<li><a class="reference external" href="http://www.frenchphotodujour.com/2012/02/stack-it-up.html">http://www.frenchphotodujour.com/2012/02/stack-it-up.html</a></li>
+</ul>
+</section>
+
+
+      </div>
+    </div>
+    
+<script src="_static/js/jquery.min.js"></script>
+<script src="_static/lib/js/head.min.js"></script>
+<script src="_static/js/reveal.js"></script>
+    <script>
+
+      // change DOM for reveal.js
+      $("div.section h1").remove();
+      var content = $("div.section").html();
+      $("div.section").remove();
+      $("div.slides").html(content);
+
+      Reveal.initialize({
+        width: 960,
+        height: 700,
+
+        margin: 0.1,
+
+        minScale: 0.2,
+        maxScale: 1.0,
+
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+
+        keyboard : true,
+        overview: true,
+        touch: true,
+        loop: false,
+        rtl: false,
+        fragments: true,
+
+        autoSlide: 0,
+        mouseWheel: false,
+        rollingLinks: true,
+        previewLinks: false,
+
+        transitionSpeed: "default",
+        backgroundTransition: "default",
+
+        theme: Reveal.getQueryHash().theme || "sky", // available themes are in /css/theme
+        transition: Reveal.getQueryHash().transition || "linear", // default/cube/page/concave/zoom/linear/fade/none
+
+        dependencies: [
+        { src: '_static/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+        { src: '_static/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+        { src: '_static/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+        { src: '_static/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+        { src: '_static/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+        { src: '_static/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+        ]
+      });
+    </script>
+  </body>
+</html>
