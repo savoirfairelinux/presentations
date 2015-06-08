@@ -1,0 +1,8 @@
+Jinja2==2.7.2
+MarkupSafe==0.19
+Pygments==1.6
+Sphinx==1.2.2
+argparse==1.2.1
+docutils==0.11
+-e git+https://github.com/titilambert/sphinxjp.themes.revealjs.git#egg=sphinxjp.themes.revealjs
+wsgiref==0.1.2
