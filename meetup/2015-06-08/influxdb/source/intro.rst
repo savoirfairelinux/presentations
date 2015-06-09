@@ -1,4 +1,4 @@
-Plugin de monitoring pour InfluxDB 0.9
+Plugin de monitoring pour InfluxDB 0.9 rc 20
 
 .. raw:: html
 
