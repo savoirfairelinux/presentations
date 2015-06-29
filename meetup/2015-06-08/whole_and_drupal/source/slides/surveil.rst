@@ -1,0 +1,1 @@
+Ecoutons Alexandre Viau à propos de Surveil et du monitoring d'OpenStack
