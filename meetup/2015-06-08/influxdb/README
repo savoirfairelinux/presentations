@@ -1,7 +1,8 @@
 To build the presentation
 1. virtualenv env
-2. pip install -r requirements.freeze
-3. make html
+2. source env/bin/activate
+3. pip install -r requirements.freeze
+4. make html
 
 The presentation is hosted the following URLs:
 French: https://savoirfairelinux.github.io/presentations/meetup/2014-12-03/
